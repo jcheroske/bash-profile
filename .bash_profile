@@ -21,8 +21,10 @@
 
 #   Change Prompt
 #   ------------------------------------------------------------
-    export PS1="________________________________________________________________________________\n| \w @ \h (\u) \n| => "
-    export PS2="| => "
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
+  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+fi
 
 #   Set Paths
 #   ------------------------------------------------------------
@@ -255,6 +257,7 @@ alias mountReadWrite='/sbin/mount -uw /'    # mountReadWrite:   For use when boo
 #   ---------------------------------------
 
 alias ncu="npm-check-updates"
+alias ws="webstorm"
 
 #   ---------------------------------------
 #   9.  REMINDERS & NOTES
@@ -292,5 +295,7 @@ alias ncu="npm-check-updates"
 
 alias ga="git add -A"
 alias gc="git commit -m"
-alias gph="git push origin master"
+alias gph="git push origin"
+alias gpl="git pull origin"
 alias gs="git status"
+
