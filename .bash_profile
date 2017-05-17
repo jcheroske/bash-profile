@@ -300,4 +300,5 @@ alias gc="git commit -m"
 alias gph="git push origin"
 alias gpl="git pull origin"
 alias gs="git status"
+alias gr="git remote set-url origin"
 
